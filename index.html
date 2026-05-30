@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Obrolan — sebuah intensitas yang pernah terjadi</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ───── LOADING SCREEN ───── -->
+  <div id="loading-screen">
+    <span class="loading-wordmark">obrolan</span>
+    <div class="loading-track">
+      <div id="load-progress"></div>
+    </div>
+    <span class="loading-hint">memuat arsip...</span>
+  </div>
+
+  <!-- ───── ERROR SCREEN ───── -->
+  <div id="error-screen"></div>
+
+  <!-- ───── OPENING SCREEN ───── -->
+  <div id="opening-screen" role="banner" aria-label="Halaman pembuka">
+    <h1 class="opening-title">Obrolan</h1>
+    <p class="opening-subtitle">sebuah intensitas yang pernah terjadi</p>
+
+    <div class="opening-meta">
+      <span class="opening-dates">27 Juli 2024</span>
+      <span class="opening-dash"></span>
+      <span class="opening-dates">08 Januari 2025</span>
+    </div>
+
+    <span class="opening-scroll-hint">scroll untuk membaca</span>
+  </div>
+
+  <!-- ───── RESUME BAR ───── -->
+  <div id="resume-bar" role="dialog" aria-label="Lanjutkan posisi baca">
+    <span class="resume-text">
+      Terakhir dibaca: <em id="resume-date-label">—</em>
+    </span>
+    <div class="resume-actions">
+      <button class="resume-btn resume-btn-yes" id="resume-yes">Lanjutkan</button>
+      <button class="resume-btn resume-btn-no"  id="resume-no">Dari awal</button>
+    </div>
+  </div>
+
+  <!-- ───── CHAT WRAPPER ───── -->
+  <main id="chat-wrapper" role="main" aria-label="Arsip percakapan">
+    <div id="chat-container"></div>
+  </main>
+
+  <!-- ───── ENDING SECTION ───── -->
+  <footer id="ending-section" role="contentinfo" aria-label="Akhir percakapan">
+    <div class="ending-spacer"></div>
+    <div class="ending-line"></div>
+    <span class="ending-date-label">Chat berakhir pada</span>
+    <span class="ending-date">08 Januari 2025</span>
+    <span class="ending-nothing">Nothing more...</span>
+  </footer>
+
+  <!-- ───── FLOATING CONTROLS ───── -->
+  <div id="floating-controls" role="navigation" aria-label="Kontrol navigasi">
+    <button class="float-btn" id="search-btn" title="Cari pesan" aria-label="Cari pesan">
+      <span class="float-btn-label">cari</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="7" cy="7" r="4.5"/>
+        <line x1="10.5" y1="10.5" x2="14" y2="14"/>
+      </svg>
+    </button>
+
+    <button class="float-btn" id="nav-btn" title="Lompat ke tanggal" aria-label="Navigasi tanggal">
+      <span class="float-btn-label">tanggal</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2.5" width="12" height="11" rx="1.5"/>
+        <line x1="2" y1="6" x2="14" y2="6"/>
+        <line x1="5.5" y1="1" x2="5.5" y2="4"/>
+        <line x1="10.5" y1="1" x2="10.5" y2="4"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ───── NAV PANEL (Tanggal) ───── -->
+  <aside id="nav-panel" role="complementary" aria-label="Navigasi tanggal" aria-hidden="true">
+    <div class="panel-header">
+      <span class="panel-title">Lompat ke Tanggal</span>
+      <button class="panel-close" id="nav-close" aria-label="Tutup">&#215;</button>
+    </div>
+    <ul id="nav-date-list" role="listbox" aria-label="Daftar tanggal"></ul>
+  </aside>
+
+  <!-- ───── SEARCH PANEL ───── -->
+  <aside id="search-panel" role="search" aria-label="Pencarian pesan" aria-hidden="true">
+    <div class="panel-header">
+      <span class="panel-title">Cari Pesan</span>
+      <button class="panel-close" id="search-close" aria-label="Tutup">&#215;</button>
+    </div>
+    <div class="search-input-wrap">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="ketik kata kunci..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Kata kunci pencarian"
+      />
+    </div>
+    <div id="search-results" role="listbox" aria-label="Hasil pencarian"></div>
+  </aside>
+
+  <!-- ───── SCRIPTS ───── -->
+  <script type="module" src="./js/app.js"></script>
+
+</body>
+</html>
